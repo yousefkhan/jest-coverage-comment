@@ -37,10 +37,11 @@ export function getMultipleReport(options: Options): string | null {
 
         atLeastOneFileExists = true
         core.startGroup(title)
-        core.info(`coverage: ${coverage}`)
-        core.setOutput(`${title}-coverage`, coverage)
-        core.info(`color: ${color}`)
-        core.setOutput(`${title}-color`, coverage)
+        const titleWithDashes = title.replace(/\s+/g, '-')
+        core.info(`${titleWithDashes}-coverage: ${coverage}`)
+        core.setOutput(`${titleWithDashes}-coverage`, coverage)
+        core.info(`${titleWithDashes}-color: ${color}`)
+        core.setOutput(`${titleWithDashes}-color`, coverage)
         core.endGroup()
       }
     }
