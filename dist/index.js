@@ -869,11 +869,11 @@ function getMultipleReport(options) {
                 table += `| ${title} ${contentMd}\n`;
                 atLeastOneFileExists = true;
                 core.startGroup(title);
-                const titleWithDashes = title.replace(/\s+/g, '-').toLowerCase();
+                const titleWithDashes = title.replace(/\s+/g, '-');
                 core.info(`${titleWithDashes}-coverage: ${coverage}`);
                 core.setOutput(`${titleWithDashes}-coverage`, coverage);
                 core.info(`${titleWithDashes}-color: ${color}`);
-                core.setOutput(`${titleWithDashes}-color`, color);
+                core.setOutput(`${titleWithDashes}-color`, coverage);
                 core.endGroup();
             }
         }
