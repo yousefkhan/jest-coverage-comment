@@ -870,7 +870,9 @@ function getMultipleReport(options) {
                 atLeastOneFileExists = true;
                 core.startGroup(title);
                 core.info(`coverage: ${coverage}`);
+                core.setOutput(`${title}-coverage`, coverage);
                 core.info(`color: ${color}`);
+                core.setOutput(`${title}-color`, coverage);
                 core.endGroup();
             }
         }
